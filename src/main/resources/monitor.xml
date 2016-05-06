@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kulm="http://code.ustech.com/schema/kulm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.ustech.com/schema/kulm http://code.ustech.com/schema/kulm/kulm.xsd">
+
+	<kulm:application name="Getconnectors" owner="Huang"
+		organization="cmb" />
+
+	<kulm:registry address="zookeeper://127.0.0.1:2181" timeout="10000"/>
+
+	<kulm:annotation package="com.us.cmbms" />
+
+	<kulm:monitor protocol="registry">
+		<kulm:parameter key="interval" value="3000"/>
+	</kulm:monitor>
+	
+	<kulm:protocol name="kulm"/>
+</beans>
